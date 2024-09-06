@@ -1,0 +1,35 @@
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src: url("/fs-intern/public/fonts/Cabin-Regular.ttf");
+    font-family: "Cabin";
+    font-weight: 400;
+}
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src: url("/fs-intern/public/fonts/Cabin-SemiBold.ttf");
+    font-family: "Cabin";
+    font-weight: 600;
+}
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src: url("/fs-intern/public/fonts/Cabin-Medium.ttf");
+    font-family: "Cabin";
+    font-weight: 500;
+}
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src: url("/fs-intern/public/fonts/BowlbyOne-Regular.ttf");
+    font-family: "Bowlby One";
+    font-weight: 400;
+}
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src: url("/fs-intern/public/fonts/Cabin-Bold.ttf");
+    font-family: "Cabin";
+    font-weight: 700;
+}
