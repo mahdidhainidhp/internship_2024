@@ -12,7 +12,7 @@ const homePageLayout = [
 export default function EmpowermentSection() {
   return (
     <>
-      <div className="flex h-[476px] w-[1280px] items-start justify-center bg-[url(../../../public/images/image_intro.png)] bg-cover bg-no-repeat py-14 md:h-auto md:py-5">
+      <div className="flex h-[476px] w-[1280px] items-start justify-center bg-cover bg-no-repeat py-14 md:h-auto md:py-5">
         <div className="container-xs mb-[76px] flex justify-centermd:px-5">
           <div className="flex w-full items-center md:flex-col">
             <div className="flex w-[46%] flex-col items-start gap-[30px] md:w-full">

@@ -40,7 +40,6 @@ export default function EventDetails({
       </div>
       <div className="relative mt-[-10px] h-[300px] content-center self-stretch rounded-[14px] bg-black-900_07 shadow-x5">
         <Img
-          // src="../images/image_intro.png"
           src={image_intro}
           alt="Event Image"
           className="mx-auto h-[300px] w-full flex-1 object-cover"
