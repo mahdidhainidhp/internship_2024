@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, Heading, Img } from "../../components";
+import ellipse_8 from "../../images/ellipse_8.png";
 
 export default function EventObjectivesSection() {
   return (
@@ -65,7 +66,7 @@ export default function EventObjectivesSection() {
                 <div className="flex flex-col items-center self-stretch">
                   <div className="relative h-[176px] w-[34%]">
                     <Img
-                      src=""
+                      src={ellipse_8}
                       alt="Settings Image"
                       className="absolute right-[-1.26px] top-0 m-auto h-[92px] w-[50%] object-contain"
                     />
@@ -121,7 +122,7 @@ export default function EventObjectivesSection() {
                         </Heading>
                       </div>
                       <Img
-                        src=""
+                        src={ellipse_8}
                         alt="Ellipse Image"
                         className="absolute bottom-[-0.46px] right-[27px] m-auto h-[56px] w-[68%] object-contain"
                       />

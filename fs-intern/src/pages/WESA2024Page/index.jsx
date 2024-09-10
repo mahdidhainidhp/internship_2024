@@ -23,7 +23,6 @@ export default function WESA2024Page() {
         <header className="relative z-[5] flex items-center justify-center bg-white-a700 py-[18px] shadow-sm">
           <div className="container-xs flex items-center justify-between gap-5 md:flex-col md:px-5">
             <Img
-              // src="../images/logo.png"
               src={logo}
               alt="Header Logo"
               className="h-[44px] w-[176px] object-contain"
