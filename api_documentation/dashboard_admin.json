@@ -1,0 +1,1006 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Admin Dashboard API",
+    "description": "API Documentation for the Admin Dashboard for the Empower Her Energy platform.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/MahdiDhaini/EmpowerHerenergy_Admin/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    }
+  ],
+  "paths": {
+    "/home": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "summary": "Get homepage data",
+        "responses": {
+          "200": {
+            "description": "Homepage details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/home/events-workshop": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "summary": "Get Event and Workshop data",
+        "responses": {
+          "200": {
+            "description": "Events and workshops listing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/home/schedule-discover": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "summary": "Get Discover Appointment Schedule",
+        "responses": {
+          "200": {
+            "description": "Discover appointment schedule",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_2"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/home/discover-her": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "summary": "Get Discover Her summary",
+        "responses": {
+          "200": {
+            "description": "Summary for Discover Her section",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_3"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pages/sections": {
+      "get": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Get all page sections",
+        "responses": {
+          "200": {
+            "description": "List of page sections",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Section"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pages/header": {
+      "get": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Get page headers",
+        "responses": {
+          "200": {
+            "description": "Header details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_4"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pages/action-button": {
+      "get": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Get page action buttons",
+        "responses": {
+          "200": {
+            "description": "Action button details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_5"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usermanagement/users": {
+      "get": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "List all users",
+        "responses": {
+          "200": {
+            "description": "List of users",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usermanagement/users/add": {
+      "post": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Add a new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "User added successfully"
+          }
+        }
+      }
+    },
+    "/usermanagement/roles": {
+      "get": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Get list of user roles",
+        "responses": {
+          "200": {
+            "description": "List of roles",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Role"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usermanagement/roles/permissions": {
+      "get": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Get role permissions",
+        "responses": {
+          "200": {
+            "description": "List of permissions for each role",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_6"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/eventmanagement/events": {
+      "get": {
+        "tags": [
+          "Event Management"
+        ],
+        "summary": "Get all events",
+        "responses": {
+          "200": {
+            "description": "List of events",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/eventmanagement/events/add": {
+      "post": {
+        "tags": [
+          "Event Management"
+        ],
+        "summary": "Create a new event",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Event"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Event created successfully"
+          }
+        }
+      }
+    },
+    "/eventmanagement/events/{eventId}": {
+      "get": {
+        "tags": [
+          "Event Management"
+        ],
+        "summary": "Get event details",
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Event details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/eventmanagement/ticket-management": {
+      "get": {
+        "tags": [
+          "Event Management"
+        ],
+        "summary": "Manage event tickets",
+        "responses": {
+          "200": {
+            "description": "List of event tickets",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ticket"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/contentmanagement/resources": {
+      "get": {
+        "tags": [
+          "Content Management"
+        ],
+        "summary": "Get all resources",
+        "responses": {
+          "200": {
+            "description": "List of resources",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Resource"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/contentmanagement/panel-discussion": {
+      "get": {
+        "tags": [
+          "Content Management"
+        ],
+        "summary": "Get panel discussions",
+        "responses": {
+          "200": {
+            "description": "List of panel discussions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PanelDiscussion"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/contentmanagement/panel-discussion/add": {
+      "post": {
+        "tags": [
+          "Content Management"
+        ],
+        "summary": "Create a new panel discussion",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PanelDiscussion"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Panel discussion created successfully"
+          }
+        }
+      }
+    },
+    "/membershipmanagement/categories": {
+      "get": {
+        "tags": [
+          "Membership Management"
+        ],
+        "summary": "Get membership categories",
+        "responses": {
+          "200": {
+            "description": "List of membership categories",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MembershipCategory"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/membershipmanagement/tiers": {
+      "get": {
+        "tags": [
+          "Membership Management"
+        ],
+        "summary": "Get membership tiers",
+        "responses": {
+          "200": {
+            "description": "List of membership tiers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MembershipTier"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/membershipmanagement/tiers/track": {
+      "get": {
+        "tags": [
+          "Membership Management"
+        ],
+        "summary": "Track membership tiers",
+        "responses": {
+          "200": {
+            "description": "Track tiers status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tracking"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/membershipmanagement/benefits": {
+      "get": {
+        "tags": [
+          "Membership Management"
+        ],
+        "summary": "Get membership benefits",
+        "responses": {
+          "200": {
+            "description": "List of membership benefits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Benefit"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/membershipmanagement/renewals": {
+      "get": {
+        "tags": [
+          "Membership Management"
+        ],
+        "summary": "Get membership renewals",
+        "responses": {
+          "200": {
+            "description": "List of renewals",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Renewal"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/formmanagement/forms": {
+      "get": {
+        "tags": [
+          "Form Management"
+        ],
+        "summary": "Get form listings",
+        "responses": {
+          "200": {
+            "description": "List of forms",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Form"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/formmanagement/forms/contact-us": {
+      "get": {
+        "tags": [
+          "Form Management"
+        ],
+        "summary": "Get Contact Us form",
+        "responses": {
+          "200": {
+            "description": "Contact Us form data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Form"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/formmanagement/forms/nomination": {
+      "get": {
+        "tags": [
+          "Form Management"
+        ],
+        "summary": "Get Nomination form",
+        "responses": {
+          "200": {
+            "description": "Nomination form data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Form"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/formmanagement/forms/partnership": {
+      "get": {
+        "tags": [
+          "Form Management"
+        ],
+        "summary": "Get Partnership form",
+        "responses": {
+          "200": {
+            "description": "Partnership form data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Form"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/formmanagement/reply-email": {
+      "post": {
+        "tags": [
+          "Form Management"
+        ],
+        "summary": "Reply to form by email",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/formmanagement_replyemail_body"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Reply sent"
+          }
+        }
+      }
+    },
+    "/settings/languages": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get available languages",
+        "responses": {
+          "200": {
+            "description": "List of available languages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "description": "Language option"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/settings/payment-integration": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get payment integration details",
+        "responses": {
+          "200": {
+            "description": "Payment integration information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_7"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Event": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "location": {
+            "type": "string"
+          }
+        }
+      },
+      "Ticket": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "eventId": {
+            "type": "integer"
+          },
+          "ticketType": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "availability": {
+            "type": "string"
+          }
+        }
+      },
+      "Resource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "PanelDiscussion": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "liveStreamLink": {
+            "type": "string"
+          }
+        }
+      },
+      "MembershipCategory": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "MembershipTier": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Tracking": {
+        "type": "object",
+        "properties": {
+          "tierId": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "Benefit": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "Renewal": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "renewalDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Form": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "formType": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object"
+          }
+        }
+      },
+      "Section": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "markdownText": {
+            "type": "string"
+          },
+          "positionOfImage": {
+            "type": "string"
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "Role": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "roleName": {
+            "type": "string"
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "inline_response_200": {
+        "type": "object",
+        "properties": {
+          "homepageBanner": {
+            "type": "string",
+            "description": "URL of the homepage banner"
+          },
+          "aboutUs": {
+            "type": "string",
+            "description": "About Us summary"
+          },
+          "shareYourStoryButton": {
+            "type": "string",
+            "description": "Share your story button"
+          }
+        }
+      },
+      "inline_response_200_1": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string",
+            "description": "Summary of event/workshop"
+          },
+          "button": {
+            "type": "string",
+            "description": "Button linking to event page"
+          },
+          "listing": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Event"
+            }
+          }
+        }
+      },
+      "inline_response_200_2": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string",
+            "description": "Summary of the Discover appointment"
+          }
+        }
+      },
+      "inline_response_200_3": {
+        "type": "object",
+        "properties": {
+          "discoverHer": {
+            "type": "string",
+            "description": "Summary for the Discover Her initiative"
+          }
+        }
+      },
+      "inline_response_200_4": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Header title"
+          },
+          "description": {
+            "type": "string",
+            "description": "Header description"
+          },
+          "image": {
+            "type": "string",
+            "description": "URL of the header image"
+          }
+        }
+      },
+      "inline_response_200_5": {
+        "type": "object",
+        "properties": {
+          "customTitle": {
+            "type": "string",
+            "description": "Custom title for the button"
+          },
+          "link": {
+            "type": "string",
+            "description": "Link for the action button"
+          }
+        }
+      },
+      "inline_response_200_6": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "Role name"
+          },
+          "permissions": {
+            "type": "array",
+            "description": "List of permissions",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "formmanagement_replyemail_body": {
+        "type": "object",
+        "properties": {
+          "formId": {
+            "type": "integer",
+            "description": "ID of the form to reply to"
+          },
+          "replyMessage": {
+            "type": "string",
+            "description": "The reply content"
+          }
+        }
+      },
+      "inline_response_200_7": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "type": "string",
+            "description": "Payment provider"
+          },
+          "apiKey": {
+            "type": "string",
+            "description": "API key for the payment gateway"
+          }
+        }
+      }
+    }
+  }
+}

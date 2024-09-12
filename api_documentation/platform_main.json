@@ -1,0 +1,868 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Empower Her Energy Platform API",
+    "description": "API for the Empower Her Energy Platform, covering Authentication, Home, Event Booking, Resources, Event Discussion, Membership, Hela Platform, Self-Discover Activities, Discover Her Section, Contact, Nomination, Partnership, and Language management.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/MahdiDhaini/EmpowerHerenergy/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    },
+    {
+      "url": "https://api.helaplatform.com"
+    }
+  ],
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "summary": "User login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully logged in"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "summary": "User registration",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Register"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "User registered successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/auth/forgot-password": {
+      "post": {
+        "summary": "Forgot password",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPassword"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Password reset link sent"
+          },
+          "400": {
+            "description": "Invalid email"
+          }
+        }
+      }
+    },
+    "/auth/verify-otp": {
+      "post": {
+        "summary": "Verify OTP for email",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOTP"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OTP verified"
+          },
+          "400": {
+            "description": "Invalid OTP"
+          }
+        }
+      }
+    },
+    "/auth/admin-approval": {
+      "post": {
+        "summary": "Admin approval for registered users",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminApproval"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User approved by admin"
+          },
+          "400": {
+            "description": "Invalid request"
+          }
+        }
+      }
+    },
+    "/home/banner": {
+      "get": {
+        "summary": "Get homepage banner details",
+        "responses": {
+          "200": {
+            "description": "Banner details retrieved successfully"
+          }
+        }
+      }
+    },
+    "/home/alert": {
+      "get": {
+        "summary": "Get homepage alert",
+        "responses": {
+          "200": {
+            "description": "Alert retrieved successfully"
+          }
+        }
+      }
+    },
+    "/home/event-workshop": {
+      "get": {
+        "summary": "Get upcoming events and workshops",
+        "responses": {
+          "200": {
+            "description": "Events and workshops retrieved successfully"
+          }
+        }
+      }
+    },
+    "/home/share-story": {
+      "post": {
+        "summary": "Share your story on the homepage",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Story"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Story shared successfully"
+          }
+        }
+      }
+    },
+    "/home/schedule-appointment": {
+      "post": {
+        "summary": "Schedule an appointment for Discover Her",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Appointment"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Appointment scheduled successfully"
+          }
+        }
+      }
+    },
+    "/events/{eventId}": {
+      "get": {
+        "summary": "View event details",
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Event details retrieved successfully"
+          }
+        }
+      }
+    },
+    "/events/tickets": {
+      "post": {
+        "summary": "Buy or reserve a ticket",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ticket"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Ticket reserved successfully"
+          }
+        }
+      }
+    },
+    "/resources/library": {
+      "get": {
+        "summary": "Get library resources",
+        "responses": {
+          "200": {
+            "description": "Resources retrieved successfully"
+          }
+        }
+      }
+    },
+    "/resources/filter": {
+      "get": {
+        "summary": "Filter resources by category, name, or format",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Filtered resources retrieved successfully"
+          }
+        }
+      }
+    },
+    "/event-discussion/open-stream": {
+      "get": {
+        "summary": "Access the live stream",
+        "responses": {
+          "200": {
+            "description": "Live stream accessed successfully"
+          }
+        }
+      }
+    },
+    "/event-discussion/comments": {
+      "post": {
+        "summary": "Submit a comment on the event",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Comment"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Comment submitted successfully"
+          }
+        }
+      }
+    },
+    "/membership/business": {
+      "get": {
+        "summary": "Get business membership details",
+        "responses": {
+          "200": {
+            "description": "Business membership details retrieved successfully"
+          }
+        }
+      }
+    },
+    "/membership/profile": {
+      "get": {
+        "summary": "Get user profile information",
+        "responses": {
+          "200": {
+            "description": "Profile information retrieved successfully"
+          }
+        }
+      }
+    },
+    "/membership/connect": {
+      "post": {
+        "summary": "Connect with another business member",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Connect"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Connected successfully"
+          }
+        }
+      }
+    },
+    "/hela/achievements": {
+      "get": {
+        "summary": "Retrieve user achievements",
+        "responses": {
+          "200": {
+            "description": "Achievements retrieved successfully"
+          }
+        }
+      }
+    },
+    "/hela/stories": {
+      "get": {
+        "summary": "Retrieve user stories",
+        "responses": {
+          "200": {
+            "description": "Stories retrieved successfully"
+          }
+        }
+      }
+    },
+    "/hela/insights": {
+      "get": {
+        "summary": "Get platform insights",
+        "responses": {
+          "200": {
+            "description": "Insights retrieved successfully"
+          }
+        }
+      }
+    },
+    "/self-discover/questionnaire": {
+      "post": {
+        "summary": "Submit questionnaire",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Questionnaire"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Questionnaire submitted successfully"
+          }
+        }
+      }
+    },
+    "/self-discover/activities": {
+      "get": {
+        "summary": "List available activities",
+        "responses": {
+          "200": {
+            "description": "Activities retrieved successfully"
+          }
+        }
+      }
+    },
+    "/discover-her/success-stories": {
+      "get": {
+        "summary": "Get success stories",
+        "responses": {
+          "200": {
+            "description": "Success stories retrieved successfully"
+          }
+        }
+      }
+    },
+    "/discover-her/achievements": {
+      "get": {
+        "summary": "Get achievements",
+        "responses": {
+          "200": {
+            "description": "Achievements retrieved successfully"
+          }
+        }
+      }
+    },
+    "/inclusiveforMen/events": {
+      "get": {
+        "tags": [
+          "InclusiveForMen"
+        ],
+        "summary": "Get men's section events",
+        "responses": {
+          "200": {
+            "description": "List of events for men",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No events found"
+          }
+        }
+      }
+    },
+    "/inclusiveforMen/content": {
+      "get": {
+        "tags": [
+          "InclusiveForMen"
+        ],
+        "summary": "Get content for men",
+        "responses": {
+          "200": {
+            "description": "List of content for men",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Resource"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No content found"
+          }
+        }
+      }
+    },
+    "/inclusiveforMen/resources": {
+      "get": {
+        "tags": [
+          "InclusiveForMen"
+        ],
+        "summary": "Get resources for men",
+        "responses": {
+          "200": {
+            "description": "List of resources for men",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Resource"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No resources found"
+          }
+        }
+      }
+    },
+    "/contact-us": {
+      "post": {
+        "summary": "Submit a contact form",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Contact form submitted successfully"
+          }
+        }
+      }
+    },
+    "/nomination": {
+      "post": {
+        "summary": "Submit a nomination form",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NominationForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Nomination form submitted successfully"
+          }
+        }
+      }
+    },
+    "/partnership": {
+      "post": {
+        "summary": "Submit a partnership request",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PartnershipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Partnership request submitted successfully"
+          }
+        }
+      }
+    },
+    "/language": {
+      "get": {
+        "summary": "Change language preference",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "en",
+                "ar",
+                "fr"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Language preference updated"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Login": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "Register": {
+        "required": [
+          "email",
+          "name",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "ForgotPassword": {
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "VerifyOTP": {
+        "required": [
+          "otp"
+        ],
+        "type": "object",
+        "properties": {
+          "otp": {
+            "type": "string"
+          }
+        }
+      },
+      "AdminApproval": {
+        "required": [
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          }
+        }
+      },
+      "Appointment": {
+        "required": [
+          "date",
+          "time"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "Story": {
+        "required": [
+          "content",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      },
+      "Ticket": {
+        "required": [
+          "eventId",
+          "quantity",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          }
+        }
+      },
+      "Comment": {
+        "required": [
+          "content",
+          "eventId",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      },
+      "Connect": {
+        "required": [
+          "businessId",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "businessId": {
+            "type": "string"
+          }
+        }
+      },
+      "Questionnaire": {
+        "required": [
+          "answers",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "answers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Event": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "location": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "Resource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      },
+      "ContactForm": {
+        "required": [
+          "email",
+          "message",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "NominationForm": {
+        "required": [
+          "category",
+          "nomineeName",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "nomineeName": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      },
+      "PartnershipRequest": {
+        "required": [
+          "description",
+          "organization"
+        ],
+        "type": "object",
+        "properties": {
+          "organization": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
