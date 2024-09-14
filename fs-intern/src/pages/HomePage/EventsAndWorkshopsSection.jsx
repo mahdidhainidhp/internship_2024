@@ -4,69 +4,51 @@ import star2 from "../../images/star2.png";
 import gif340 from "../../images/output-onlinegiftools-340.png";
 import gif308 from "../../images/output-onlinegiftools-308.png";
 
-export default function EventsAndWorkshopsSetion() {
+export default function EventsAndWorkshopsSection() {
   return (
     <>
-      <div className="flex">
-        <div className="container-xs flex md:px-5">
-          <div className="flex w-full flex-col">
-            <Text size="text4xl" as="p" className="!font-brice leading-[111px]">
-              <>
-                Events &<br /> Workshops
-              </>
+      <div className="flex flex-col items-center py-10 md:py-5">
+        <div className="container flex flex-col items-center lg:flex-row lg:justify-between px-5 md:px-2">
+          {/* Text Section */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left lg:w-1/2">
+            <Text
+              size="text4xl"
+              as="h1"
+              className="!font-brice leading-tight text-center lg:text-left mb-10 text-[#b43a4d]"
+            >
+              Events &<br /> Workshops
             </Text>
-            <div className="relative mt-[-224px] flex items-center md:flex-col">
-              <div className="relative z-[2] mb-3.5 flex flex-1 flex-col items-start gap-[18px] self-end md:self-stretch sm:self-auto">
-                <div className="flex flex-col items-start gap-3 self-stretch">
-                  <Text as="p" className="leading-6 !text-black-900">
-                    <>
-                      Join us for dynamic events and workshops designed to
-                      empower women! Whether you&#39;re <br />
-                      seeking personal growth, professional development, or a
-                      space to connect with like-minded <br />
-                      individuals, our programs offer inspiration, tools, and
-                      support to help you achieve your goals. <br />
-                      Together, we rise!
-                    </>
-                  </Text>
-                  <Text as="p" className="leading-6 !text-black-900">
-                    <>
-                      From leadership seminars to creative workshops and
-                      wellness sessions, our events are <br />
-                      crafted to uplift and energize. Discover new
-                      opportunities, expand your network, and <br />
-                      embrace your power in a vibrant community of women
-                      striving for success.
-                    </>
-                  </Text>
-                </div>
-                <Button
-                  shape="round"
-                  className="min-w-[280px] border border-solid border-pink-800 font-semibold"
-                >
-                  Join Now
-                </Button>
-              </div>
-              <div className="relative ml-[-10px] h-[526px] w-[36%] md:ml-0 md:w-full">
-                <Img
-                  // src="../../images/output-onlinegiftools-308.png"
-                  src={gif308}
-                  alt="First Event Image"
-                  className="absolute bottom-0 left-0 m-auto h-[308px] w-[308px] object-cover"
-                />
-                <Img
-                  // src="../../images/output-onlinegiftools-340.png"
-                  src={gif340}
-                  alt="Second Event Image"
-                  className="absolute right-0 top-0 m-auto h-[340px] w-[340px] object-cover"
-                />
-                <Img
-                  // src="../../images/star2.png"
-                  src={star2}
-                  alt="Third Event Image"
-                  className="absolute left-0 top-[30px] m-auto h-[70px] w-[70px]"
-                />
-              </div>
+            <div className="flex flex-col items-start gap-6 mb-6 text-black-900 lg:items-start lg:text-left">
+              <Text as="p" className="leading-6 !text-gray-700">
+                Join us for dynamic events and workshops designed to empower
+                women! Whether you're seeking personal growth, professional
+                development, or a space to connect with like-minded individuals, 
+                our programs offer inspiration, tools, and support to help you 
+                achieve your goals. Together, we rise!
+              </Text>
+              <Text as="p" className="leading-6 !text-gray-700">
+                From leadership seminars to creative workshops and wellness
+                sessions, our events are crafted to uplift and energize. 
+                Discover new opportunities, expand your network, and embrace 
+                your power in a vibrant community of women striving for success.
+              </Text>
+              <Button
+                shape="round"
+                className="min-w-[280px] border border-solid border-pink-800 font-semibold mt-4"
+              >
+                Join Now
+              </Button>
+            </div>
+          </div>
+
+          {/* Image Section */}
+          <div className="relative w-full lg:w-1/2 h-auto flex justify-center items-center mt-10 lg:mt-0">
+            <div className="relative flex justify-center items-center lg:flex-col lg:gap-10">
+              <Img
+                src={gif308}
+                alt="First Event Image"
+                className="absolute lg:static lg:mb-4 h-[308px] w-[308px] object-cover"
+              />
             </div>
           </div>
         </div>

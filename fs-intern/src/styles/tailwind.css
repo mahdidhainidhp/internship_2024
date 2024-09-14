@@ -50,4 +50,14 @@ select:focus {
     .container-xs {
         @apply w-full mx-auto max-w-[1198px];
     }
+
+    @layer components {
+        .bg-join-now {
+          background-image: url('/src/images/image_join.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+    }
 }
+

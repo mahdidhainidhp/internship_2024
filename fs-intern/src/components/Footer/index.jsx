@@ -1,139 +1,142 @@
 import React from "react";
 import { Text, Button, Input, Heading, Img } from "./..";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo_footer.png";
 
 export default function Footer({ ...props }) {
   return (
     <footer
       {...props}
-      className={`${props.className} flex items-center p-[22px] sm:p-5 bg-gradient2 shadow-sm`}
+      className={`${props.className} bg-gradient-to-r from-[#b43a4d] to-[#3f0b19] py-10 px-4 shadow-sm w-full`}
     >
-      <div className="mx-auto mb-2 flex w-full max-w-[1210px] flex-col gap-8">
-        <div className="flex items-start justify-between gap-5 md:flex-col">
-          <div className="flex flex-col items-center gap-14 sm:gap-7">
-            <Img
-              // src="../images/logo.png"
-              src={logo}
-              alt="Footer Logo"
-              className="h-[86px] w-[334px] object-contain"
-            />
-            <Text as="p" className="!text-white-a700_7f">
-              <span>This websie is property of</span>
-              <span>The Exclusive.</span>
+      <div className="max-w-[1920px] mx-auto flex flex-col gap-8 md:gap-6 px-4 lg:px-10">
+        {/* Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Logo and Ownership */}
+          <div className="flex flex-col items-center lg:items-start gap-6">
+            <Img src={logo} alt="Footer Logo" className="h-20 w-auto" />
+            <Text
+              as="p"
+              className="text-center text-white opacity-70 lg:text-left"
+            >
+              This website is property of <br /> The Exclusive.
             </Text>
           </div>
-          <div className="flex w-[8%] flex-col items-center gap-2.5 self-center md:w-full">
-            <Heading as="h5" className="!text-white-a700">
+
+          {/* Quick Access */}
+          <div className="flex flex-col gap-6">
+            <Heading
+              as="h5"
+              className="text-white mb-2 text-center lg:text-left"
+            >
               Quick Access
             </Heading>
-            <ul className="!mr-1 flex flex-col items-start gap-2.5 self-stretch md:mr-0">
+            <ul className="flex flex-col gap-2.5 items-center lg:items-start">
               <li>
-                <a href="Home" target="_blank" rel="noreferrer">
-                  <Text as="p" className="!text-white-a700_d8">
-                    Home
-                  </Text>
+                <a href="Home" className="text-white hover:underline">
+                  Home
                 </a>
               </li>
               <li>
-                <a href="WESA2024" target="_blank" rel="noreferrer">
-                  <Text as="p" className="!text-white-a700_d8">
-                    WESA2024
-                  </Text>
+                <a href="WESA2024" className="text-white hover:underline">
+                  WESA2024
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <Text as="p" className="!text-white-a700_d8">
-                    Get Involved
-                  </Text>
+                <a href="#" className="text-white hover:underline">
+                  Get Involved
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <Text as="p" className="!text-white-a700_d8">
-                    Contact Us
-                  </Text>
+                <a href="#" className="text-white hover:underline">
+                  Contact Us
                 </a>
               </li>
             </ul>
           </div>
-          <div className="flex w-[10%] items-center justify-center md:w-full">
-            <ul className="flex flex-col items-start gap-2.5">
+
+          {/* Contact Us */}
+          <div className="flex flex-col gap-6 items-center lg:items-start">
+            <Heading
+              as="h5"
+              className="text-white mb-2 text-center lg:text-left"
+            >
+              Contact Us
+            </Heading>
+            <ul className="flex flex-col gap-2.5">
               <li>
-                <a href="#">
-                  <Heading as="h5" className="!text-white-a700">
-                    Contact Us
-                  </Heading>
-                </a>
-              </li>
-              <li>
-                <a href="Locations" target="_blank" rel="noreferrer">
-                  <Text as="p" className="!text-white-a700_d8">
-                    Locations
-                  </Text>
+                <a href="#" className="text-white hover:underline">
+                  Locations
                 </a>
               </li>
             </ul>
-            <div className="relative ml-[-94px] flex flex-1 flex-col items-center gap-2.5">
-              <Text as="p" className="!text-white-a700_d8">
+            <div className="flex flex-col items-center lg:items-start gap-2.5">
+              <Text as="p" className="text-white">
                 +961 71 123456
               </Text>
-              <Text as="p" className="!text-white-a700_d8">
+              <Text as="p" className="text-white">
                 +961 70 123456
               </Text>
             </div>
           </div>
-          <div className="flex flex-col items-start gap-2.5">
-            <Heading as="h5" className="!text-white-a700">
-              Follow us On
+
+          {/* Follow Us On */}
+          <div className="flex flex-col gap-6 items-center lg:items-start">
+            <Heading
+              as="h5"
+              className="text-white mb-2 text-center lg:text-left"
+            >
+              Follow Us On
             </Heading>
-            <ul className="flex flex-col items-start gap-2.5">
+            <ul className="flex flex-col gap-2.5 items-center lg:items-start">
               <li>
-                <a href="Facebook" target="_blank" rel="noreferrer">
-                  <Text as="p" className="!text-white-a700_d8">
-                    Facebook
-                  </Text>
+                <a href="Facebook" className="text-white hover:underline">
+                  Facebook
                 </a>
               </li>
               <li>
-                <a href="Twitter" target="_blank" rel="noreferrer">
-                  <Text as="p" className="!text-white-a700_d8">
-                    Twitter
-                  </Text>
+                <a href="Twitter" className="text-white hover:underline">
+                  Twitter
                 </a>
               </li>
               <li>
-                <a href="Instagram" target="_blank" rel="noreferrer">
-                  <Text as="p" className="!text-white-a700_d8">
-                    Instagram
-                  </Text>
+                <a href="Instagram" className="text-white hover:underline">
+                  Instagram
                 </a>
               </li>
             </ul>
           </div>
-          <div className="flex w-[18%] flex-col items-start gap-1.5 md:w-full">
-            <Heading as="h5" className="!text-white-a700">
+        </div>
+
+        {/* Subscribe Section */}
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-6">
+          <div className="flex flex-col w-full max-w-[400px]">
+            <Heading
+              as="h5"
+              className="text-white mb-2 text-center lg:text-left"
+            >
               Subscribe
             </Heading>
             <Input
               shape="round"
               name="Email Input"
-              placeholder={`Enter Email`}
+              placeholder="Enter Email"
+              className="w-full bg-pink-100 border border-gray-300 text-gray-700 rounded-full px-4 py-2"
             />
             <Button
               color="black_900_b2"
               size="sm"
               shape="round"
-              className="min-w-[120px] border border-solid border-pink-800"
+              className="mt-4 w-full bg-black text-white py-2 px-6 rounded-full hover:bg-gray-800 transition"
             >
               Subscribe
             </Button>
           </div>
         </div>
-        <div className="h-px bg-white-a700_7f" />
-        <div className="flex flex-col items-center px-14 md:px-5">
-          <Text as="p" className="!text-white-a700">
-            &copy;2024 Innovation Alchemy, All ights reserved
+
+        {/* Footer Bottom */}
+        <div className="border-t border-white opacity-70 mt-4 pt-4">
+          <Text as="p" className="text-center text-white">
+            &copy;2024 Innovation Alchemy, All rights reserved
           </Text>
         </div>
       </div>

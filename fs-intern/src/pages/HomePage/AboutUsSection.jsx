@@ -6,92 +6,71 @@ import star2 from "../../images/star2.png";
 
 export default function AboutUsSection() {
   return (
-    <>
-      <div className="flex">
-        <div className="container-xs flex md:px-5">
-          <div className="flex w-full items-center md:flex-col">
-            <div className="flex w-[38%] flex-col gap-0.5 md:w-full">
-              <div className="relative h-[480px] content-center rounded-[10px] bg-white-a700 py-1.5 md:h-auto">
-                <Img
-                  // src="../images/image2.png"
-                  src={image1}
-                  alt="Secondary Image"
-                  className="ml-auto mr-12 h-[444px] w-[72%] object-contain md:mr-0"
-                />
-                <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max flex-1 flex-col items-start gap-[314px] md:gap-[235px] sm:gap-[157px]">
-                  <Img
-                    // src="../../images/star1.png"
-                    src={star1}
-                    alt="First Star Image"
-                    className="h-[70px] w-[70px]"
-                  />
-                  <Img
-                    // src="../../images/star2.png"
-                    src={star2}
-                    alt="Second Star Image"
-                    className="mr-3 h-[70px] w-[70px] self-end md:mr-0"
-                  />
-                </div>
-              </div>
-              <Button
-                shape="round"
-                className="mx-[88px] self-stretch border border-solid border-pink-800 font-semibold md:mx-0"
-              >
-                Find Out More
-              </Button>
+    <section className="py-8 px-4 md:px-6 lg:px-8 bg-white">
+      <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        {/* Image and Stars Section */}
+        <div className="relative w-full md:w-1/2 flex justify-center md:justify-start">
+          <div className="relative w-auto">
+            <Img
+              src={image1}
+              alt="Secondary Image"
+              className="w-auto h-auto object-cover"
+            />
+            <div className="absolute -top-8 left-[-40px]">
+              <Img src={star1} alt="First Star Image" className="h-16 w-16" />
             </div>
-            <div className="relative z-[1] flex flex-1 flex-col items-start gap-1.5 md:self-stretch">
-              <Text size="text4xl" as="p" className="!font-brice">
-                About Us
-              </Text>
-              <div className="flex flex-col items-start self-stretch">
-                <Heading size="headings" as="h2" className="!font-semibold">
-                  Get to Know Us: Our Story and Team
-                </Heading>
-                <Text as="p" className="mt-1 leading-6 !text-black-900">
-                  <>
-                    Welcome to EmpowerHer.Energy, where we are dedicated to
-                    unleashing the power and <br />
-                    potential of women across industries. Our platform is
-                    committed to supporting women <br />
-                    in sectors where they are traditionally underrepresented
-                    compared to men, including <br />
-                    STEM, leadership and executive positions, finance and
-                    investment banking, construction, <br />
-                    and skilled trades.
-                  </>
-                </Text>
-                <Text as="p" className="mt-2 leading-6 !text-black-900">
-                  <>
-                    Born from a passionate desire to foster growth, empowerment,
-                    and advancement for <br />
-                    women, EmpowerHer.Energy is a beacon of inspiration and
-                    support for women <br />
-                    professionals, entrepreneurs, and enthusiasts alike.
-                  </>
-                </Text>
-                <Text size="textmd" as="p" className="mt-3.5">
-                  What to expect?
-                </Text>
-                <Text as="p" className="mt-1 leading-6 !text-black-900">
-                  <>
-                    With a rallying cry to redefine possibilities and shatter
-                    barriers, EmpowerHer.Energy <br />
-                    embarks on a mission to illuminate these sectors with the
-                    brilliance and resilience of <br />
-                    empowered women. This isn&#39;t just a platform; it is a
-                    movement—a journey of <br />
-                    transformation where each empowered woman becomes a catalyst
-                    for a brighter, more <br />
-                    inclusive energy future and where we teach men to live with
-                    empowered women.
-                  </>
-                </Text>
-              </div>
+            <div className="absolute top-8 right-[-40px]">
+              <Img src={star2} alt="Second Star Image" className="h-16 w-16" />
             </div>
           </div>
         </div>
+
+        {/* Text Content Section */}
+        <div className="flex flex-col w-full md:w-1/2 text-left md:text-left">
+          <Text size="text4xl" as="p" className="font-bold text-[#A92448] mb-4">
+            ABOUT US
+          </Text>
+          <Heading size="headings" as="h2" className="font-semibold mb-6 text-[#A92448]">
+            Get to Know Us: Our Story and Team
+          </Heading>
+          <div className="space-y-4">
+            <Text as="p" className="text-gray-900 leading-7">
+              Welcome to EmpowerHer.Energy, where we are dedicated to unleashing
+              the power and potential of women across industries. Our platform
+              is committed to supporting women in sectors where they are
+              traditionally underrepresented compared to men, including STEM,
+              leadership and executive positions, finance and investment
+              banking, construction, and skilled trades.
+            </Text>
+            <Text as="p" className="text-gray-900 leading-7">
+              Born from a passionate desire to foster growth, empowerment, and
+              advancement for women, EmpowerHer.Energy is a beacon of
+              inspiration and support for women professionals, entrepreneurs,
+              and enthusiasts alike.
+            </Text>
+            <Text size="textxl" as="p" className="mt-6 font-bold text-[#A92448]">
+              What to expect?
+            </Text>
+            <Text as="p" className="text-gray-900 leading-7">
+              With a rallying cry to redefine possibilities and shatter
+              barriers, EmpowerHer.Energy embarks on a mission to illuminate
+              these sectors with the brilliance and resilience of empowered
+              women. This isn’t just a platform; it is a movement—a journey of
+              transformation where each empowered woman becomes a catalyst for a
+              brighter, more inclusive energy future and where we teach men to
+              live with empowered women.
+            </Text>
+          </div>
+          <div className="mt-8">
+            <Button
+              shape="round"
+              className="border-2 border-solid border-[#A92448] text-[#A92448] font-semibold px-8 py-3"
+            >
+              Find Out More
+            </Button>
+          </div>
+        </div>
       </div>
-    </>
+    </section>
   );
 }
